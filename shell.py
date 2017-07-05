@@ -6,15 +6,20 @@ def print_menu():
         core.REGULAR_PRICE, core.MEDIUM_PRICE, core.PREMIUM_PRICE))
 
 
+def get_gas_price(gas_type):
+    price = core.gas_price(gas_type)
+    if price is None:
+        print('Invalid gas type... Program exiting...')
+        exit()
+    return price
+
+
 def main():
     print_menu()
 
     gas_type = input('Which type of gas would you like to buy: ')
 
-    gas_price = core.gas_price(gas_type)
-    if gas_price is None:
-        print('Invalid gas type... Program exiting...')
-        exit()
+    gas_price = get_gas_price(gas_type)
 
     gallons = float(input('How many gallons of gas would you like to buy: '))
 
