@@ -1,3 +1,5 @@
+import core
+
 REGULAR_PRICE = 2.00
 MEDIUM_PRICE = 2.50
 PREMIUM_PRICE = 3.00
@@ -9,13 +11,8 @@ def main():
 
     gas_type = input('Which type of gas would you like to buy: ')
 
-    if gas_type == 'Regular':
-        gas_price = REGULAR_PRICE
-    elif gas_type == 'Medium':
-        gas_price = MEDIUM_PRICE
-    elif gas_type == 'Premium':
-        gas_price = PREMIUM_PRICE
-    else:
+    gas_price = core.gas_price(gas_type)
+    if gas_price is None:
         print('Invalid gas type... Program exitting...')
         exit()
 
