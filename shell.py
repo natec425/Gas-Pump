@@ -1,9 +1,13 @@
 import core
 
 
-def main():
+def print_menu():
     print('Gas costs: Regular (${:.2f}), Medium (${:.2f}), Premium (${:.2f})'.format(
         core.REGULAR_PRICE, core.MEDIUM_PRICE, core.PREMIUM_PRICE))
+
+
+def main():
+    print_menu()
 
     gas_type = input('Which type of gas would you like to buy: ')
 
