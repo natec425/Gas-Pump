@@ -3,7 +3,7 @@ import core
 
 def print_menu():
     print('Gas costs: Regular (${:.2f}), Medium (${:.2f}), Premium (${:.2f})'.format(
-        core.REGULAR_PRICE, core.MEDIUM_PRICE, core.PREMIUM_PRICE))
+        core.gas_price('Regular'), core.gas_price('Medium'), core.gas_price('Premium')))
 
 
 def get_gas_price(gas_type):
