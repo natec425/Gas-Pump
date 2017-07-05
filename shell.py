@@ -20,33 +20,23 @@ def log_transaction(gas_type, gas_price, gallons):
 
 
 def pay_after(gas_type, gas_price):
-
     gallons = float(input('How many gallons of gas would you like to buy: '))
-
     print('Thank you for your purchase. That will be ${:.2f}.'.format(gallons * gas_price))
-
     log_transaction(gas_type, gas_price, gallons)
 
 
 def prepay(gas_type, gas_price):
     total_cost = float(input('How much gas would you like to buy: $'))
-
     gallons = total_cost / gas_price
-
     print('Thank you for your purchase. That will be {:.2f} gallons.'.format(gallons))
-
     log_transaction(gas_type, gas_price, gallons)
 
 
 def main():
     print_menu()
-
     gas_type = input('Which type of gas would you like to buy: ')
-
     gas_price = get_gas_price(gas_type)
-
     prepaying = input('Will you be prepaying (y/n): ')
-
     if prepaying == 'n':
         pay_after(gas_type, gas_price)
     else:
