@@ -1,9 +1,19 @@
 import core
 
 
-def print_menu():
-    print('Gas costs: Regular (${:.2f}), Medium (${:.2f}), Premium (${:.2f})'.format(
-        core.gas_price('Regular'), core.gas_price('Medium'), core.gas_price('Premium')))
+def print_menu(inventory):
+    '''Inventory -> None
+
+    Prints a menu for the given inventory.
+
+    >>> print_menu([['Regular', 2.0], ['Premium', 3.0]])
+    Gas Costs:
+    Regular - $2.00
+    Premium - $3.00
+    '''
+    print('Gas Costs:')
+    for name, cost in inventory:
+        print('{} - ${:.2f}'.format(name, cost))
 
 
 def get_gas_price(gas_type):
@@ -33,7 +43,7 @@ def prepay(gas_type, gas_price):
 
 
 def main():
-    print_menu()
+    print_menu(core.INVENTORY)
     gas_type = input('Which type of gas would you like to buy: ')
     gas_price = get_gas_price(gas_type)
     prepaying = input('Will you be prepaying (y/n): ')
