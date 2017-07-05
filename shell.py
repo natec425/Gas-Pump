@@ -9,7 +9,7 @@ def main():
 
     gas_price = core.gas_price(gas_type)
     if gas_price is None:
-        print('Invalid gas type... Program exitting...')
+        print('Invalid gas type... Program exiting...')
         exit()
 
     gallons = float(input('How many gallons of gas would you like to buy: '))
