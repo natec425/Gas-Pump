@@ -1,7 +1,8 @@
-REGULAR_PRICE = 2.00
-MEDIUM_PRICE = 2.50
-PREMIUM_PRICE = 3.00
-
+INVENTORY = [
+    ['Regular', 2.0],
+    ['Medium', 2.5],
+    ['Premium', 3.0]
+]
 
 def gas_price(gas_type):
     '''String -> Float
@@ -19,8 +20,8 @@ def gas_price(gas_type):
     True
     '''
     if gas_type == 'Regular':
-        return REGULAR_PRICE
+        return INVENTORY[0][1]
     elif gas_type == 'Medium':
-        return MEDIUM_PRICE
+        return INVENTORY[1][1]
     elif gas_type == 'Premium':
-        return PREMIUM_PRICE
+        return INVENTORY[2][1]
