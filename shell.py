@@ -14,6 +14,11 @@ def get_gas_price(gas_type):
     return price
 
 
+def log_transaction(gas_type, gas_price, gallons):
+    with open('log.txt', 'a') as logfile:
+        logfile.write('{}, {}, {}\n'.format(gas_type, gas_price, gallons))
+
+
 def main():
     print_menu()
 
@@ -25,9 +30,7 @@ def main():
 
     print('Thank you for your purchase. That will be ${:.2f}.'.format(gallons * gas_price))
 
-    with open('log.txt', 'a') as logfile:
-        logfile.write('{}, {}, {}\n'.format(gas_type, gas_price, gallons))
-
+    log_transaction(gas_type, gas_price, gallons)
 
 if __name__ == '__main__':
     main()
