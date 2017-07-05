@@ -19,6 +19,15 @@ def log_transaction(gas_type, gas_price, gallons):
         logfile.write('{}, {}, {}\n'.format(gas_type, gas_price, gallons))
 
 
+def pay_after(gas_type, gas_price):
+
+    gallons = float(input('How many gallons of gas would you like to buy: '))
+
+    print('Thank you for your purchase. That will be ${:.2f}.'.format(gallons * gas_price))
+
+    log_transaction(gas_type, gas_price, gallons)
+
+
 def main():
     print_menu()
 
@@ -26,11 +35,7 @@ def main():
 
     gas_price = get_gas_price(gas_type)
 
-    gallons = float(input('How many gallons of gas would you like to buy: '))
-
-    print('Thank you for your purchase. That will be ${:.2f}.'.format(gallons * gas_price))
-
-    log_transaction(gas_type, gas_price, gallons)
+    pay_after(gas_type, gas_price)
 
 if __name__ == '__main__':
     main()
