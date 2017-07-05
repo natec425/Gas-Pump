@@ -1,3 +1,8 @@
+REGULAR_PRICE = 2.00
+MEDIUM_PRICE = 2.50
+PREMIUM_PRICE = 3.00
+
+
 def gas_price(gas_type):
     '''String -> Float
 
@@ -14,8 +19,8 @@ def gas_price(gas_type):
     True
     '''
     if gas_type == 'Regular':
-        return 2.0
+        return REGULAR_PRICE
     elif gas_type == 'Medium':
-        return 2.5
+        return MEDIUM_PRICE
     elif gas_type == 'Premium':
-        return 3.0
+        return PREMIUM_PRICE

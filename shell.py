@@ -1,13 +1,9 @@
 import core
 
-REGULAR_PRICE = 2.00
-MEDIUM_PRICE = 2.50
-PREMIUM_PRICE = 3.00
-
 
 def main():
     print('Gas costs: Regular (${:.2f}), Medium (${:.2f}), Premium (${:.2f})'.format(
-        REGULAR_PRICE, MEDIUM_PRICE, PREMIUM_PRICE))
+        core.REGULAR_PRICE, core.MEDIUM_PRICE, core.PREMIUM_PRICE))
 
     gas_type = input('Which type of gas would you like to buy: ')
 
