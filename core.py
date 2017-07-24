@@ -4,13 +4,15 @@ INVENTORY = [
     ['Premium', 3.0]
 ]
 
-def gas_price(gas_type):
+def gas_price(inventory, gas_type):
     '''String -> Float
 
     Returns the price per gallon of the provided gas type.
     If an invalid gas type is provided, None is returned.
 
-    >>> gas_price('Regular')
+    >>> gas_price(['Regular', 2.0],
+    ... ['Medium', 2.5],
+    ... ['Premium', 3.0], 'Regular')
     2.0
     >>> gas_price('Medium')
     2.5
@@ -20,8 +22,8 @@ def gas_price(gas_type):
     True
     '''
     if gas_type == 'Regular':
-        return INVENTORY[0][1]
+        return inventory[0][1]
     elif gas_type == 'Medium':
-        return INVENTORY[1][1]
+        return inventory[1][1]
     elif gas_type == 'Premium':
-        return INVENTORY[2][1]
+        return inventory[2][1]
